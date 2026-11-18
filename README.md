@@ -1,23 +1,33 @@
 # Quantum Timestamped Entanglement
 
-Can three time-stamped heralds deliver a useful Bell pair while the optical phase drifts? A receiver that measures the local excitation count can combine the three links without learning their phases. It uses three raw-link memories per node, preserves the coherence within each excitation sector, and outputs a logical Bell qubit with a classical success flag.
+Can three timestamped heralds deliver a useful Bell pair while the optical phase drifts? A receiver measures the local excitation count at each node and uses the surviving coherence to produce a logical Bell pair. It uses three raw-link memories per node and a classical success flag.
 
-In one example with 80% genuine heralds, the receiver succeeds on **44.8%** of triples at **95.24%** Bell fidelity. At the same fidelity, any receiver acting only on a timestamp-selected pair from those triples succeeds on at most **33.64%**. The example uses ideal memories and controls and a single false-herald product state. A separate receiver bound includes storage dephasing, control error and both false-herald product states.
+In an ideal example with 80% genuine heralds, the receiver succeeds on **44.8%** of triples at **at least 95.24% Bell fidelity**. At the same fidelity, any receiver acting only on a timestamp-selected pair from those triples succeeds on at most **33.64%**. The comparison uses one false-herald product state and the same offered timestamps.
 
 | Question | Result and scope |
 | --- | --- |
 | What do three heralds buy? | [Finite receiver and matched two-input bound](science/receiver.md) |
-| How much does noise erode the gain? | [Storage, latency and false-herald analysis](science/robustness.md) |
+| How much does noise erode the gain? | [Storage, latency and both false-herald products](science/robustness.md) |
 | What is the best rate in a sparse stream? | [Optimal Poisson-stream rate](science/stream.md) |
-| How can I reproduce the numerical examples? | [Verification commands and scope](verification/README.md) |
+| How do I reproduce the examples? | [Verification commands and expected outputs](verification/README.md) |
 
-Each isolated herald is separable after averaging over the unknown optical phase. The usable entanglement comes from the phase correlation between arrivals. For Poisson herald rate $`\lambda`$, phase diffusion rate $`D`$, and independent genuine probability $`q`$, the leading ideal distillable rate is
+Each isolated herald is separable after averaging over the unknown optical phase. The usable entanglement comes from the phase correlation between arrivals. For an ideal stream with **one false-herald product state**, Poisson herald rate $`\lambda`$, wrapped Brownian phase diffusion rate $`D`$, and fixed genuine probability $`q`$, the optimal sparse distillable rate is
 
 ```math
-R = C q^2\frac{\lambda^2}{D} + o\!\left(\frac{\lambda^2}{D}\right),
-\qquad C=\frac{\ln 2-\pi^2/24}{2\ln 2}\approx 0.20336 .
+R=C q^2\frac{\lambda^2}{D}+o\!\left(\frac{\lambda^2}{D}\right),
+\qquad C=\frac{\ln 2-\pi^2/24}{2\ln 2}\approx0.20336 .
 ```
 
-Here the long observation limit precedes the sparse limit, and $`q`$ is fixed. Pair processing reaches the leading coefficient. On clean streams, three-herald processing also reaches the next coefficient. The distillable-rate result uses block hashing after the bounded-memory front end. The finite receiver instead delivers a heralded output directly.
+The long observation limit precedes the sparse limit. Pair processing reaches the leading term. On clean streams, three-herald processing also reaches the next coefficient. The streaming protocol uses block hashing after the bounded-memory front end. The finite receiver delivers its heralded Bell pair directly.
 
-Start with the [model](science/model.md) or follow the [scientific account](science/README.md). The [related work](references/RELATED_WORK.md) covers the physical two-copy primitive, prior three-to-one protocols, flexible pairing and the phase-correlation rate question.
+## Read the science
+
+Start with the [source and timing model](science/model.md), or follow the [scientific account](science/README.md). The [related work](references/RELATED_WORK.md) covers prior two-copy and three-to-one distillation, flexible pairing and the stochastic rate question. [Download the BibTeX bibliography](references/references.bib).
+
+## Study the result
+
+The [30 milestones](learning/MILESTONES.md) follow one worked triple from relative phase to finite receiver performance and stream distillation. The [Wilde bridge](learning/WILDE_BRIDGE.md) connects the argument to *Quantum Information Theory*, second edition (2017).
+
+## Purpose
+
+This repository serves as a record of the work and a guide for the author’s self-directed learning. For discussion or potential collaboration, please contact Ruge Lin at [gogoko699@gmail.com](mailto:gogoko699@gmail.com).
