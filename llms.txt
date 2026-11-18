@@ -1,0 +1,22 @@
+# Quantum Timestamped Entanglement
+
+> Timestamped single-click links retain relative-phase coherence across arrivals. A local three-herald receiver converts that coherence into usable Bell pairs without observing the optical phase.
+
+## Read the result
+
+- [Overview and principal results](README.md)
+- [Source and timing model](science/model.md): raw link states, public timestamps, hidden source labels, finite and stream output contracts.
+- [Three-herald receiver](science/receiver.md): local excitation counting, qutrit filtering, Bell fidelity and a matched two-input upper bound.
+- [Robustness and wall time](science/robustness.md): dephasing, both false-click products, a flagged instrument error budget, finite and windowed examples.
+- [Poisson-stream proof](science/stream.md): arbitrary timestamp-aware LOCC converse, contiguous conditional mutual information and the clean next-order gain.
+
+## Study and reproduce
+
+- [Wilde bridge](learning/WILDE_BRIDGE.md): selected 2017 second edition and one worked triple.
+- [Thirty milestones](learning/MILESTONES.md): background and connected project route.
+- [Verification](verification/README.md): run `python3 verification/check.py` with NumPy.
+- [Related work](references/RELATED_WORK.md) and [BibTeX bibliography](references/references.bib).
+
+## Scope
+
+The finite upper bound permits arbitrary processing of one timestamp-selected raw dyad from the supplied triple. In the robustness comparison the dyad receiver gets ideal storage and may decode early. The finite noisy receiver meets a Bell fidelity target averaged over accepted outputs. The ideal stream rate counts distilled ebits per elapsed time, with the long observation limit before the sparse limit. The q² leading factor uses one false-click product state; the clean second coefficient assumes all heralds genuine. The three-cell memory count is for raw links at each endpoint. Outer hashing requires additional block storage.

@@ -35,7 +35,7 @@ In a three-dimensional sector, Alice uses the three-outcome instrument with Krau
 
 ```math
 K_{\{i,j\}}=\frac{|i\rangle\langle i|+|j\rangle\langle j|}{\sqrt{2}},
-\qquad 1\le i<j\le3.
+\qquad 1\le i\lt j\le3.
 ```
 
 Each level occurs in exactly two operators, so $`\sum_{\{i,j\}}K_{\{i,j\}}^\dagger K_{\{i,j\}}=I`$. One implementation attaches a flag register to level $`k`$ in the equal superposition of the two labels $`\{i,j\}`$ that contain $`k`$, then measures the flag. Alice sends the accepted label. Both nodes map positions $`i`$ and $`j`$ to logical zero and one in the same order. In the $`(1,1)`$ case Bob reverses his position labels so his logical index also agrees with Alice's.
@@ -83,9 +83,9 @@ For two links at a gap with visibility $`v`$, all joint-count sectors except $`(
 For any conditional two-qubit output $`\tau`$ of fidelity $`F`$, the partial transpose $`(\Phi^+)^\Gamma`$ has operator norm $`1/2`$. Thus
 
 ```math
-F=\operatorname{Tr}[\tau^\Gamma(\Phi^+)^\Gamma]
+F=\mathrm{Tr}[\tau^\Gamma(\Phi^+)^\Gamma]
 \leq \frac{\|\tau^\Gamma\|_1}{2}
-=\frac{1}{2}+{\cal N}(\tau).
+=\frac{1}{2}+\mathcal{N}(\tau).
 ```
 
 Negativity cannot increase on average under LOCC. Applying this to a local instrument with a success flag gives $`P(F-1/2)\le q^2 v/4`$. The bound still holds if the successful state averages several labeled outputs with their respective local corrections. [Vidal and Werner](https://doi.org/10.1103/PhysRevA.65.032314)
