@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     env:
-      CAPTURE_REVISION: ce1de475423772b0fe82b067a399be76469c3b6a
+      CAPTURE_REVISION: bd5853735f07396a5100a6ae3d1d1cccd19c7e35
     steps:
       - name: Check out the pinned scientific source
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
@@ -33,10 +33,10 @@ jobs:
           test "$(git hash-object check_rendered_math.py)" = "1d3bf9810d0dfadb844a48b354af80f9b66924bc"
           npm install --prefix "$RUNNER_TEMP/math-runtime" playwright@1.56.1 mathjax-full@3.2.1
           node "$RUNNER_TEMP/math-runtime/node_modules/playwright/cli.js" install --with-deps chromium
-      - name: Probe science rendering
+      - name: Capture all reader-facing mathematics
         run: |
           export NODE_PATH="$RUNNER_TEMP/math-runtime/node_modules"
-          node "$RUNNER_TEMP/collector/probe_hosted_math.cjs" --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" --revision "$CAPTURE_REVISION" --page science/robustness.md --output "$RUNNER_TEMP/hosted-math"
+          node "$RUNNER_TEMP/collector/capture_hosted_math.cjs" --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" --revision "$CAPTURE_REVISION" --output "$RUNNER_TEMP/hosted-math"
       - name: Keep actual rendering evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
