@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     env:
-      CAPTURE_REVISION: a9c3ec09be33c0ee4f4c423467a2867ec7b90420
+      CAPTURE_REVISION: e1de4dfe789ddc745e3720901654450241481d88
     steps:
       - name: Check out the pinned scientific source
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
