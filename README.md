@@ -2,7 +2,7 @@
 
 Can three timestamped heralds deliver a useful Bell pair while the optical phase drifts? A receiver measures the local excitation count at each node and uses the surviving coherence to produce a logical Bell pair. It uses three raw-link memories per node and a classical success flag.
 
-In an ideal example with 80% genuine heralds, the receiver succeeds on **44.8%** of triples at **at least 95.24% Bell fidelity**. At the same fidelity, any receiver acting only on a timestamp-selected pair from those triples succeeds on at most **33.64%**. The comparison uses one false-herald product state and the same offered timestamps.
+In an ideal example with 80% genuine heralds, the receiver succeeds on **44.8%** of triples, with **Bell fidelity of at least 95.24%**. At the same fidelity, any receiver acting only on a timestamp-selected pair from those triples succeeds on at most **33.64%**. The comparison uses one false-herald product state and the same offered timestamps.
 
 | Question | Result and scope |
 | --- | --- |
