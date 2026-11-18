@@ -4,7 +4,7 @@ A single herald leaves no usable entanglement once its uniformly distributed opt
 
 ## Input and output
 
-At three known times $`t_1<t_2<t_3`$, the two nodes receive one raw qubit each per herald. Independently at each herald, with probability $`q`$ the joint state is
+At three known times $`t_1\lt t_2\lt t_3`$, the two nodes receive one raw qubit each per herald. Independently at each herald, with probability $`q`$ the joint state is
 
 ```math
 |\psi(\phi_j)\rangle
@@ -84,7 +84,7 @@ For any conditional two-qubit output $`\tau`$ of fidelity $`F`$, the partial tra
 
 ```math
 F=\mathrm{Tr}[\tau^\Gamma(\Phi^+)^\Gamma]
-\leq \frac{\|\tau^\Gamma\|_1}{2}
+\leq \frac{\mathrm{Tr}\lvert\tau^\Gamma\rvert}{2}
 =\frac{1}{2}+\mathcal{N}(\tau).
 ```
 

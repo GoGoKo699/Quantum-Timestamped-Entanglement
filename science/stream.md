@@ -6,7 +6,7 @@ The endpoints know the timestamps and source parameters. They can store their lo
 
 ## Rate law
 
-For each fixed $`0<q\le1`$,
+For each fixed $`0\lt q\le1`$,
 
 ```math
 R_q(\lambda,D)
@@ -26,7 +26,7 @@ The coefficient $`C_2`$ contains a three-herald term from conditioning on the mi
 
 ## Clean stream as an entropy rate
 
-Given timestamps $`t_1<\dots<t_n`$, define a state on $`n`$ auxiliary qubits by
+Given timestamps $`t_1\lt \dots\lt t_n`$, define a state on $`n`$ auxiliary qubits by
 
 ```math
 \sigma(t_1,\ldots,t_n)=
@@ -64,7 +64,7 @@ G_{i:j}=Y_{i:j}-Y_{i+1:j}-Y_{i:j-1}+Y_{i+1:j-1}
 =I(Q_i:Q_j\mid Q_{i+1},\ldots,Q_{j-1})_\sigma\ge0.
 ```
 
-Strong subadditivity gives the sign. Summing over $`i<j`$ telescopes to $`Y_{1:n}`$ because the singleton and empty scores vanish. If the interval contains $`m`$ clicks, write its score as $`G_m(X_1,\ldots,X_{m-1})`$, where $`X_i`$ is the succeeding gap in units of $`D^{-1}`$.
+Strong subadditivity gives the sign. Summing over $`i\lt j`$ telescopes to $`Y_{1:n}`$ because the singleton and empty scores vanish. If the interval contains $`m`$ clicks, write its score as $`G_m(X_1,\ldots,X_{m-1})`$, where $`X_i`$ is the succeeding gap in units of $`D^{-1}`$.
 
 After a Poisson arrival the future gaps $`X_i`$ are independent exponentials of rate $`\varepsilon`$. For an interval of duration $`T`$, the expected number per unit time of starting clicks that leave enough room for a gap tuple gets a factor $`(1-(X_1+\cdots+X_{m-1})/(DT))_+`$. Summing over lengths and taking $`T\to\infty`$ by monotone convergence gives the exact series
 
@@ -122,7 +122,7 @@ Y_3(x,y)=\frac34\big[\log_2 3-S(M_3(x,y))\big],
 G_3(x,y)=Y_3(x,y)-Y_2(x)-Y_2(y).
 ```
 
-The score $`G_3`$ is nonnegative. For a triplet with both gaps finite, $`Y_3`$ strictly exceeds the yield of the better single dyad because both dyad scores are positive. This comparison concerns the ideal local weight receiver preserving its qutrit output for outer hashing. The separate finite-output protocol in [the receiver analysis](receiver.md) maps the qutrit to one heralded Bell qubit and uses a different fidelity-success criterion.
+The score $`G_3`$ is nonnegative. For a triplet with both gaps finite, $`Y_3`$ strictly exceeds the yield of the better single dyad because both dyad scores are positive. This comparison concerns the ideal local weight receiver preserving its qutrit output for outer hashing. The separate finite-output protocol in [the receiver analysis](receiver.md) maps the qutrit to one heralded logical Bell pair and uses a different fidelity-success criterion.
 
 Taylor expanding the exponential gap densities, using the integrable bound and its finite moments, gives
 
