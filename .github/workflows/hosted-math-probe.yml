@@ -1,0 +1,47 @@
+name: Inspect pinned GitHub mathematics
+on:
+  push:
+    branches:
+      - merlin/hosted-math-probe-20261118
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      CAPTURE_REVISION: ce1de475423772b0fe82b067a399be76469c3b6a
+    steps:
+      - name: Check out the pinned scientific source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.CAPTURE_REVISION }}
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Prepare pinned public verification code
+        run: |
+          mkdir "$RUNNER_TEMP/collector"
+          cd "$RUNNER_TEMP/collector"
+          curl -fsSLO "https://raw.githubusercontent.com/GoGoKo699/Quantum-Memory-Calibration/213dcbf5013bf7ea63f796e6288ef24963281b23/verification/hosted_math/probe_hosted_math.cjs"
+          curl -fsSLO "https://raw.githubusercontent.com/GoGoKo699/Quantum-Memory-Calibration/213dcbf5013bf7ea63f796e6288ef24963281b23/verification/hosted_math/capture_hosted_math.cjs"
+          curl -fsSLO "https://raw.githubusercontent.com/GoGoKo699/Quantum-Memory-Calibration/213dcbf5013bf7ea63f796e6288ef24963281b23/verification/hosted_math/check_rendered_math.py"
+          test "$(git hash-object probe_hosted_math.cjs)" = "f83ea9da799bee0b53bd5c57315ae2b4b2d9de43"
+          test "$(git hash-object capture_hosted_math.cjs)" = "d650de78b0bce00d1abf99cadfb66af1a2e80358"
+          test "$(git hash-object check_rendered_math.py)" = "1d3bf9810d0dfadb844a48b354af80f9b66924bc"
+          npm install --prefix "$RUNNER_TEMP/math-runtime" playwright@1.56.1 mathjax-full@3.2.1
+          node "$RUNNER_TEMP/math-runtime/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Probe science rendering
+        run: |
+          export NODE_PATH="$RUNNER_TEMP/math-runtime/node_modules"
+          node "$RUNNER_TEMP/collector/probe_hosted_math.cjs" --root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" --revision "$CAPTURE_REVISION" --page science/robustness.md --output "$RUNNER_TEMP/hosted-math"
+      - name: Keep actual rendering evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: hosted-math-${{ env.CAPTURE_REVISION }}
+          path: ${{ runner.temp }}/hosted-math
+          if-no-files-found: error
+          retention-days: 14
