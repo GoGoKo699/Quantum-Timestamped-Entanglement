@@ -169,10 +169,13 @@ A dyad longer than $`L/D`$ can be removed at an expected cost per time at most $
 In the cluster rate formula, replacing $`Y_3(x,y)`$ by $`\max\{Y_2(x),Y_2(y)\}`$ therefore gives the optimal additive score up to $`o(\lambda\varepsilon^2)`$. Its rate deficit relative to the three-share receiver at this order is $`\lambda\varepsilon^2\Delta`$, with
 
 ```math
-\Delta=\int_0^\infty\!\int_0^\infty
-\big[Y_3(x,y)-\max\{Y_2(x),Y_2(y)\}\big]\,dx\,dy
-=\int_0^\infty\!\int_0^\infty G_3(x,y)\,dx\,dy
-+2\int_0^\infty xY_2(x)\,dx>0.
+\begin{aligned}
+\Delta
+&=\int_0^\infty\!\int_0^\infty
+\big[Y_3(x,y)-\max\{Y_2(x),Y_2(y)\}\big]\,dx\,dy\\
+&=\int_0^\infty\!\int_0^\infty G_3(x,y)\,dx\,dy
++2\int_0^\infty xY_2(x)\,dx\gt0.
+\end{aligned}
 ```
 
 The equality uses $`\min\{Y_2(x),Y_2(y)\}=Y_2(\max\{x,y\})`$. The positive deficit is approximately $`0.22466\lambda^3/D^2`$ in the sparse limit.
