@@ -9,14 +9,17 @@
 - [Three-herald receiver](science/receiver.md): local excitation counting, qutrit filtering, Bell fidelity and a matched two-input upper bound.
 - [Robustness and wall time](science/robustness.md): dephasing, both false-click products, a flagged instrument error budget, finite and windowed examples.
 - [Poisson-stream proof](science/stream.md): arbitrary timestamp-aware LOCC converse, contiguous conditional mutual information and the clean next-order gain.
+- [Matched phase clocks](science/matched-phase-diagnostics.md): same source state through three clicks, exact local four-herald diagnostic, and separated long-record rate deficits at fixed Poisson intensity.
 
 ## Study and reproduce
 
-- [Wilde bridge](learning/WILDE_BRIDGE.md): selected 2017 second edition and one worked triple.
+- [Preskill bridge](learning/ANCHOR_BRIDGE.md): *Quantum Shannon Theory*, updated June 2025, and one worked triple.
 - [Thirty milestones](learning/MILESTONES.md): background and connected project route.
-- [Verification](verification/README.md): run `python3 verification/check.py` with NumPy.
+- [Verification](verification/README.md): the original numerical checks and the matched-clock check.
 - [Related work](references/RELATED_WORK.md) and [BibTeX bibliography](references/references.bib).
 
 ## Scope
 
 The finite upper bound permits arbitrary processing of one timestamp-selected raw dyad from the supplied triple. In the robustness comparison the dyad receiver gets ideal storage and may decode early. The finite noisy receiver meets a Bell fidelity target averaged over accepted outputs. The ideal stream rate counts distilled ebits per elapsed time, with the long observation limit before the sparse limit. The q² leading factor uses one false-click product state; the clean second coefficient assumes all heralds genuine. The three-cell memory count is for raw links at each endpoint. Outer hashing requires additional block storage.
+
+The matched-clock rate theorem assumes ideal memories, all heralds genuine, a fixed Poisson herald intensity and weak phase noise after the long observation limit. Its four-herald diagnostic uses genuine links at any supplied distinct timestamps.

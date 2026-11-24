@@ -1,8 +1,8 @@
 # Quantum Timestamped Entanglement in 30 milestones
 
-Follow one link from the first detector click to the optimal rate of an entire stream. M01–M12 assemble the physical and information-theoretic tools. M13–M30 use those tools to decode a three-herald block, compare it with any selected two-input receiver, and explain which parts of that gain persist in a sparse stream.
+Follow one link from the first detector click to the optimal rate of an entire stream. M01–M12 assemble the physical and information-theoretic tools. M13–M30 use those tools to decode a three-herald block, compare it with any selected two-input receiver, explain which parts of that gain persist in a sparse stream, and test whether three clicks identify a phase clock.
 
-Chapter and section numbers refer to Wilde's *Quantum Information Theory*, second edition (2017). The [Wilde bridge](WILDE_BRIDGE.md) connects the textbook notation to the research model. The [scientific account](../science/README.md) collects the full derivations.
+Chapter and section numbers refer to John Preskill's *Quantum Shannon Theory*, updated June 2025. The [Preskill bridge](ANCHOR_BRIDGE.md) connects the source notation to the research model. The [scientific account](../science/README.md) collects the full derivations.
 
 ## Background and preliminaries
 
@@ -16,13 +16,13 @@ Distinguish an observed herald from the hidden label that says whether it is gen
 
 *How can a single excitation be shared by two nodes?*
 
-Starting from M01, write the two terms $`\lvert01\rangle`$ and $`\lvert10\rangle`$ of one genuine link and identify the relative phase between them. Separate the known sign correction from the unobserved path phase, and recognize a Bell fidelity as an overlap with a declared target state. Wilde §§3.2, 3.5–3.6 and 9.2. [Receiver inputs and output](../science/receiver.md#input-and-output)
+Starting from M01, write the two terms $`\lvert01\rangle`$ and $`\lvert10\rangle`$ of one genuine link and identify the relative phase between them. Separate the known sign correction from the unobserved path phase, and recognize a Bell fidelity as an overlap with a declared target state. [Receiver inputs and output](../science/receiver.md#input-and-output)
 
 ### M03 Average over the unknown phase
 
 *What survives when the optical phase of one link is uniformly unknown?*
 
-Use the state in M02 to form its density matrix and average the two off-diagonal terms over one full circle. Read the resulting mixture as equal probabilities for two product states. This explains why a single herald averaged over its phase has no distillable entanglement. Wilde §§4.1 and 4.3. [Phase and false heralds](../science/model.md#false-heralds)
+Use the state in M02 to form its density matrix and average the two off-diagonal terms over one full circle. Read the resulting mixture as equal probabilities for two product states. This explains why a single herald averaged over its phase has no distillable entanglement. Preskill §10.2.2 supplies the mixing and entropy context. [Phase and false heralds](../science/model.md#false-heralds)
 
 ### M04 Measure time in phase-coherence units
 
@@ -34,43 +34,43 @@ Build on M03 by separating the absolute phase from the increment across a known 
 
 *Which superpositions are preserved by a local excitation-count measurement?*
 
-From M02 and M04, group local bit strings by excitation count. Explain why the count projection keeps the coherence between $`\lvert100\rangle`$ and $`\lvert010\rangle`$ and what extra information a position readout would expose. This is the operation that lets the receiver use relative phase. Wilde §§3.4, 4.2 and 5.4. [Count circuit](../science/receiver.md#protocol)
+From M02 and M04, group local bit strings by excitation count. Explain why the count projection keeps the coherence between $`\lvert100\rangle`$ and $`\lvert010\rangle`$ and what extra information a position readout would expose. This is the operation that lets the receiver use relative phase. [Count circuit](../science/receiver.md#protocol)
 
 ### M06 Keep the measurement record with its quantum output
 
 *How does a measurement branch describe both acceptance and the delivered state?*
 
-Starting from M05, read $`K\rho K^\dagger`$ as an unnormalized branch, its trace as branch probability, and the normalized operator as the conditional state. Connect the sum of the effects $`K^\dagger K`$ to a complete instrument, so that a fidelity target and a probability of meeting it can be tracked separately. Wilde §§4.2, 4.4 and 5.3. [Finite receiver protocol](../science/receiver.md#protocol)
+Starting from M05, read $`K\rho K^\dagger`$ as an unnormalized branch, its trace as branch probability, and the normalized operator as the conditional state. Connect the sum of the effects $`K^\dagger K`$ to a complete instrument, so that a fidelity target and a probability of meeting it can be tracked separately. [Finite receiver protocol](../science/receiver.md#protocol)
 
 ### M07 Declare what the receiver may use
 
 *Which actions count as local operations and classical communication?*
 
-Using M01 and M06, assign the stored qubits to the two endpoints and identify which records they can exchange. Explain why a comparison against any such two-input receiver must give it the same timestamps and permit classical adaptation within its selected pair. Wilde §19.1. [Finite receiver comparison](../science/model.md#finite-receiver-comparison)
+Using M01 and M06, assign the stored qubits to the two endpoints and identify which records they can exchange. Explain why a comparison against any such two-input receiver must give it the same timestamps and permit classical adaptation within its selected pair. [Finite receiver comparison](../science/model.md#finite-receiver-comparison)
 
 ### M08 Bound entanglement with partial transpose
 
 *How can the input state limit the success of an arbitrary local receiver?*
 
-Build on M07 by taking the transpose on one node's indices and identifying the sum of the absolute values of the negative eigenvalues as negativity. Relate that quantity to Bell fidelity and account for every instrument outcome when applying its average monotonicity. Wilde §19.1 supplies the local-operation context. [Negativity benchmark](../science/receiver.md#best-two-retained-inputs-at-matched-fidelity)
+Build on M07 by taking the transpose on one node's indices and identifying the sum of the absolute values of the negative eigenvalues as negativity. Relate that quantity to Bell fidelity and account for every instrument outcome when applying its average monotonicity. [Negativity benchmark](../science/receiver.md#best-two-retained-inputs-at-matched-fidelity)
 
 ### M09 Read an entropy from a state
 
 *What do a joint spectrum and a local marginal each contribute to an entanglement rate?*
 
-Use the mixed state of M03 and the count sectors of M05 to distinguish global entropy from the entropy of either endpoint alone. When the local marginal is maximally mixed, relate coherent information to the difference between the log of its dimension and the joint entropy. Wilde §§11.1–11.2 and 11.4–11.5. [Clean stream as an entropy rate](../science/stream.md#clean-stream-as-an-entropy-rate)
+Use the mixed state of M03 and the count sectors of M05 to distinguish global entropy from the entropy of either endpoint alone. When the local marginal is maximally mixed, relate coherent information to the difference between the log of its dimension and the joint entropy. Preskill §§10.2.1 and 10.7.1. [Clean stream as an entropy rate](../science/stream.md#clean-stream-as-an-entropy-rate)
 
 ### M10 Use an output test to bound what came before
 
 *Why can a simple Bell test constrain every decoder in a rate proof?*
 
-Combine M07–M09 by comparing the actual source and a separable source under the same receiver and the same pass/fail test. Identify relative-entropy data processing as the reason that distinguishability after the test bounds how much distinguishability was present at the input. Wilde §§11.8–11.9 and 19.2. [Clean stream converse](../science/stream.md#clean-stream-as-an-entropy-rate)
+Combine M07–M09 by comparing the actual source and a separable source under the same receiver and the same pass/fail test. Identify relative-entropy data processing as the reason that distinguishability after the test bounds how much distinguishability was present at the input. Preskill §10.2.4. [Clean stream converse](../science/stream.md#clean-stream-as-an-entropy-rate)
 
 ### M11 Read conditional mutual information across an interval
 
 *How do we describe correlations between the two ends with the middle as quantum side information?*
 
-Extend M09 to conditional entropy and conditional mutual information. Use strong subadditivity to explain its nonnegativity. Connect the entropy continuity bound to changing the state by a small trace distance while assessing a two-dimensional endpoint. Wilde §§9.1, 11.4, 11.7 and 11.9–11.10. [Contiguous intervals](../science/stream.md#contiguous-intervals-resolve-the-sparse-expansion)
+Extend M09 to conditional entropy and conditional mutual information. Use strong subadditivity to explain its nonnegativity. Connect the entropy continuity bound to changing the state by a small trace distance while assessing a two-dimensional endpoint. Preskill §§10.2.3–10.2.4 give the entropy inequalities. [Contiguous intervals](../science/stream.md#contiguous-intervals-resolve-the-sparse-expansion)
 
 ### M12 Assemble the two receiver questions
 
@@ -126,7 +126,7 @@ Take the two-slot coherence from M15 and account for its loss in both stored raw
 
 *How can a third link still help when the receiver itself is imperfect?*
 
-Build on M17–M19 by tracking both false-click products $`\lvert00\rangle`$ and $`\lvert11\rangle`$. Identify receiver branches that pass the flags but are orthogonal to the target. Apply the success bound $`P-\delta`$ and explain how the Bell-overlap condition $`J-F_*P\ge\delta`$ certifies the fidelity target under a half-diamond instrument error $`\delta`$. Reproduce the $`44.64\%`$ lower bound at $`95\%`$ target fidelity and compare it with the ideal-memory two-input ceiling of $`33.74\%`$ in the declared example. Wilde §§9.1–9.3 supply the trace-distance context. [Certified noisy operating region](../science/robustness.md#a-certified-noisy-operating-region)
+Build on M17–M19 by tracking both false-click products $`\lvert00\rangle`$ and $`\lvert11\rangle`$. Identify receiver branches that pass the flags but are orthogonal to the target. Apply the success bound $`P-\delta`$ and explain how the Bell-overlap condition $`J-F_*P\ge\delta`$ certifies the fidelity target under a half-diamond instrument error $`\delta`$. Reproduce the $`44.64\%`$ lower bound at $`95\%`$ target fidelity and compare it with the ideal-memory two-input ceiling of $`33.74\%`$ in the declared example. [Certified noisy operating region](../science/robustness.md#a-certified-noisy-operating-region)
 
 ### M21 Pay for empty windows and decoding
 
@@ -138,31 +138,31 @@ Use M12 and M18–M20 to explain how exactly-three Poisson arrivals in a fixed a
 
 *Why can a block of bipartite links be represented by one auxiliary phase-state matrix?*
 
-Apply M09 and M13 to a block after Bob flips each raw bit. Identify the matching basis labels on the two endpoints and use the map $`\lvert x\rangle\mapsto\lvert x,x\rangle`$ to preserve the spectrum. With uniform diagonal and endpoint marginal, read the entropy score as $`n-S(\sigma)`$. Wilde §§11.1–11.2 and 11.4–11.5. [Clean stream as an entropy rate](../science/stream.md#clean-stream-as-an-entropy-rate)
+Apply M09 and M13 to a block after Bob flips each raw bit. Identify the matching basis labels on the two endpoints and use the map $`\lvert x\rangle\mapsto\lvert x,x\rangle`$ to preserve the spectrum. With uniform diagonal and endpoint marginal, read the entropy score as $`n-S(\sigma)`$. Preskill §§10.2.1 and 10.7.1. [Clean stream as an entropy rate](../science/stream.md#clean-stream-as-an-entropy-rate)
 
 ### M23 Bound the entire clean stream from above
 
 *Why does the clean-block entropy score limit even collective timestamp-aware decoding?*
 
-Apply M10 to the block in M22. Choose its diagonal separable state as the comparison input. An $`m`$-ebit test can pass there with probability at most $`2^{-m}`$, so data processing turns the relative entropy to this comparison state into an upper bound on reliable output size. Wilde §§11.8–11.9, 19.2 and 24.9. [Clean stream converse](../science/stream.md#clean-stream-as-an-entropy-rate)
+Apply M10 to the block in M22. Choose its diagonal separable state as the comparison input. An $`m`$-ebit test can pass there with probability at most $`2^{-m}`$, so data processing turns the relative entropy to this comparison state into an upper bound on reliable output size. Preskill §10.2.4. [Clean stream converse](../science/stream.md#clean-stream-as-an-entropy-rate)
 
 ### M24 Attain the clean block score by hashing
 
 *How can hashing use correlated arrivals without assuming that the raw links are independent?*
 
-Build on M04, M09 and M22–M23 by twirling the local total excitation phase separately in each fixed-time block. Explain why only within-block increments remain and how finite bins of timestamp configurations produce repeated states for one-way hashing. Link the resulting achievable score to the converse and the long-time limit. Wilde §§11.5 and 24.9. [Clean stream achievability](../science/stream.md#clean-stream-as-an-entropy-rate)
+Build on M04, M09 and M22–M23 by twirling the local total excitation phase separately in each fixed-time block. Explain why only within-block increments remain and how finite bins of timestamp configurations produce repeated states for one-way hashing. Link the resulting achievable score to the converse and the long-time limit. Preskill §§10.7.1 and 10.8.2. [Clean stream achievability](../science/stream.md#clean-stream-as-an-entropy-rate)
 
 ### M25 Resolve the score into contiguous intervals
 
 *Which entropy contributions belong to dyads, triplets and longer intervals?*
 
-Use M11 and M22–M24 to subtract adjoining subinterval scores. The difference is the conditional mutual information of the endpoints given the middle, and summing it telescopes to the clean block score. For the stream, associate each interval size with an expectation over its dimensionless Poisson gaps. Wilde §§11.7 and 11.9. [Contiguous interval expansion](../science/stream.md#contiguous-intervals-resolve-the-sparse-expansion)
+Use M11 and M22–M24 to subtract adjoining subinterval scores. The difference is the conditional mutual information of the endpoints given the middle, and summing it telescopes to the clean block score. For the stream, associate each interval size with an expectation over its dimensionless Poisson gaps. Preskill §10.2.3. [Contiguous interval expansion](../science/stream.md#contiguous-intervals-resolve-the-sparse-expansion)
 
 ### M26 Control the contribution of long intervals
 
 *Why can the sparse expansion stop after the first few cluster sizes?*
 
-Combine M04, M11 and M25. Reset the phase across the largest gap to split the record into independent parts. Brownian phase mixing bounds the trace-distance change, and continuity for the two-dimensional endpoint bounds the resulting conditional mutual information uniformly in the interval length. Relate the largest-gap law to the order of the summed remainder. Wilde §§9.1 and 11.10. [Sparse expansion tail](../science/stream.md#contiguous-intervals-resolve-the-sparse-expansion)
+Combine M04, M11 and M25. Reset the phase across the largest gap to split the record into independent parts. Brownian phase mixing bounds the trace-distance change, and continuity for the two-dimensional endpoint bounds the resulting conditional mutual information uniformly in the interval length. Relate the largest-gap law to the order of the summed remainder. [Sparse expansion tail](../science/stream.md#contiguous-intervals-resolve-the-sparse-expansion)
 
 ### M27 Derive the leading sparse rate from dyads
 
@@ -182,8 +182,8 @@ Use the qutrit in M14 and the interval expansion in M25–M27. Compute the tripl
 
 Use M24 and M26–M28 to follow the short-gap cluster rule through one, two, three and at least four arrivals. Explain why three raw memories per endpoint suffice for the front end, why preserving the full qutrit sectors is useful for hashing, and how the ideal rate still requires downstream block storage. Identify the additive dyad score as a separate benchmark within the clean-stream analysis. [Three raw memories](../science/stream.md#three-raw-memories-attain-both-clean-coefficients) · [Best additive dyad score](../science/stream.md#best-additive-dyad-score)
 
-### M30 State what triplets add across both tasks
+### M30 Explain what a fourth herald reveals
 
-*Where does the third herald change the receiver's capability, and what assumptions decide whether to use it?*
+*How can two sources agree on the whole state of every triplet and still give different long-stream rates?*
 
-Bring M18–M21 and M27–M29 together. Explain the finite reliability gain at fixed timestamps, the leading optimal stream rate supplied by dyads, and the clean next-order rate recovered by the triplet receiver. Keep the finite noise guarantee, ideal stream assumptions, time accounting and downstream memory requirements visible when comparing these results. [Scientific account](../science/README.md) · [Verification](../verification/README.md)
+Bring M04, M14 and M22–M29 together. The phase harmonics of orders zero and one determine every triplet, so the finite triplet gain applies identically under either matched phase clock. For four heralds, the coherence between $`0011`$ and $`1100`$ samples the second harmonic across its middle gap. Separate this finite diagnostic from the rate question. At fixed Poisson intensity in the clean, weak-noise stream, the matched clocks have different entropy rates even though their three-click states agree. Identify which assumptions distinguish this limit from the sparse Brownian expansion. [Matched phase clocks](../science/matched-phase-diagnostics.md) · [Verification](../verification/README.md)
