@@ -55,7 +55,7 @@ Conditional purity at times $`t_i`$ is $`\mathbb E_Z\prod_i\cos^2(f(t_i/L)Z/2)`$
 \mathbb E_Z\exp\!\left[-\lambda\int_0^L\sin^2(f(t/L)Z/2)\,dt\right].
 ```
 
-With a fixed positive probability, $`|Z|`$ is between one and two of its standard deviations. For small $`v`$ it is then at most one, and on the middle half-window $`f\ge1/2`$. On this event, the exponent has magnitude bounded below by a positive constant because $`\lambda v L^2=1`$. Thus the average purity is bounded away from one. Using $`S\ge-\log_2\operatorname{Tr}\sigma^2`$ and Jensen gives a constant positive mean entropy per full window, or at least $`c\sqrt{\lambda v}`$ per unit time. The conditioning is used only in this entropy inequality.
+With a fixed positive probability, $`|Z|`$ is between one and two of its standard deviations. For small $`v`$ it is then at most one, and on the middle half-window $`f\ge1/2`$. On this event, the exponent has magnitude bounded below by a positive constant because $`\lambda v L^2=1`$. Thus the average purity is bounded away from one. Using $`S\ge-\log_2\mathrm{Tr}\sigma^2`$ and Jensen gives a constant positive mean entropy per full window, or at least $`c\sqrt{\lambda v}`$ per unit time. The conditioning is used only in this entropy inequality.
 
 For the upper bound, set the initial angle to zero and put back its uniform twirl at entropy cost at most $`\log_2(N_T+1)`$. The state with the initial angle fixed has the same nonzero spectrum as the uniform mixture of coherent states with real amplitudes
 
@@ -64,9 +64,9 @@ For the upper bound, set the initial angle to zero and put back its uniform twir
 \qquad 0\le s\le T.
 ```
 
-This follows by comparing coherent-state overlaps with the Brownian characteristic function in the entries of $`\sigma`$. Define $`M=\sum_i|\mathbf1_{[0,t_i]}\rangle\langle\mathbf1_{[0,t_i]}|`$. Its nonzero eigenvalues are the eigenvalues of the click covariance matrix $`(\min(t_i,t_j))_{ij}`$. The mean photon number in the corresponding environment mode is $`v\,\mathrm{eig}(M)/4`$. Subadditivity and the single-mode maximum entropy at fixed photon number bound the entropy by $`\operatorname{Tr}g(vM/4)`$, where $`g(z)=(z+1)\log_2(z+1)-z\log_2 z`$.
+This follows by comparing coherent-state overlaps with the Brownian characteristic function in the entries of $`\sigma`$. Define $`M=\sum_i|\mathbf1_{[0,t_i]}\rangle\langle\mathbf1_{[0,t_i]}|`$. Its nonzero eigenvalues are the eigenvalues of the click covariance matrix $`(\min(t_i,t_j))_{ij}`$. The mean photon number in the corresponding environment mode is $`v\,\mathrm{eig}(M)/4`$. Subadditivity and the single-mode maximum entropy at fixed photon number bound the entropy by $`\mathrm{Tr}g(vM/4)`$, where $`g(z)=(z+1)\log_2(z+1)-z\log_2 z`$.
 
-In the eigenbasis of $`\mathbb E M`$, scalar Jensen applied first to spectral weights and then to timestamps gives $`\mathbb E\operatorname{Tr}g(vM/4)\le\operatorname{Tr}g(v\mathbb E M/4)`$. The mean kernel is $`\lambda(T-\max(s,u))`$, with eigenvalues $`\lambda T^2/[\pi^2(j-1/2)^2]`$, $`j=1,2,\ldots`$. The sum divided by $`T`$ converges to its integral, with integrable logarithmic behavior at zero and $`O(u^{-2}\log u)`$ at infinity. In particular, $`\int_0^\infty g(u^{-2})\,du=2\pi/\ln 2`$ by integration by parts. The common twirl costs $`o(T)`$ in expectation. This proves that the entropy rate is at most $`\sqrt{\lambda v}/\ln 2`$. In model A the lower and upper bounds have the same order.
+In the eigenbasis of $`\mathbb E M`$, scalar Jensen applied first to spectral weights and then to timestamps gives $`\mathbb E\mathrm{Tr}g(vM/4)\le\mathrm{Tr}g(v\mathbb E M/4)`$. The mean kernel is $`\lambda(T-\max(s,u))`$, with eigenvalues $`\lambda T^2/[\pi^2(j-1/2)^2]`$, $`j=1,2,\ldots`$. The sum divided by $`T`$ converges to its integral, with integrable logarithmic behavior at zero and $`O(u^{-2}\log u)`$ at infinity. In particular, $`\int_0^\infty g(u^{-2})\,du=2\pi/\ln 2`$ by integration by parts. The common twirl costs $`o(T)`$ in expectation. This proves that the entropy rate is at most $`\sqrt{\lambda v}/\ln 2`$. In model A the lower and upper bounds have the same order.
 
 ## The jump arm is governed by sampled parity
 
@@ -76,7 +76,7 @@ Absorb the parity at the first click into the uniform starting phase. Condition 
 p(d)=\frac{1-e^{-\kappa d/2}}{2}.
 ```
 
-Conversely, mixing the weak Brownian state over sampled parity strings adds at most this string entropy. The remaining weak Brownian entropy rate is at most $`\sqrt{\lambda}\kappa^2/\ln 2`$ by the upper bound just proved. The jump-arm gap is therefore between $`J`$ and $`J+\sqrt{\lambda}\kappa^2/\ln 2`$, where $`J=\lambda\mathbb E_{\Delta\sim\operatorname{Exp}(\lambda)}h_2(p(\Delta))`$. The renewal average follows by integrating the adjacent-pair intensity $`\lambda^2(T-d)e^{-\lambda d}`$ on $`0\lt d\lt T`$ and dividing by $`T`$.
+Conversely, mixing the weak Brownian state over sampled parity strings adds at most this string entropy. The remaining weak Brownian entropy rate is at most $`\sqrt{\lambda}\kappa^2/\ln 2`$ by the upper bound just proved. The jump-arm gap is therefore between $`J`$ and $`J+\sqrt{\lambda}\kappa^2/\ln 2`$, where $`J=\lambda\mathbb E_{\Delta\sim\mathrm{Exp}(\lambda)}h_2(p(\Delta))`$. The renewal average follows by integrating the adjacent-pair intensity $`\lambda^2(T-d)e^{-\lambda d}`$ on $`0\lt d\lt T`$ and dividing by $`T`$.
 
 Set $`a=\kappa/(4\lambda)`$ and $`U=\lambda\Delta`$. Then $`p=(1-e^{-2aU})/2`$, $`\mathbb E p=a/(1+2a)`$, and $`p/a\le U`$. In $`h_2(p)=p\log_2(1/p)+O(p)`$ the correction from replacing $`\log_2(1/p)`$ by $`\log_2(1/a)`$ has expected magnitude $`O(a)`$, since $`x|\log_2 x|`$ is bounded on $`[0,1]`$ and $`\mathbb E[U\log_2(1+U)]`$ is finite. This yields the stated leading coefficient.
 
